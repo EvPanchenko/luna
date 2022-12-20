@@ -3,6 +3,9 @@
   gap: 125px;
   width: 100%;
   flex-wrap: wrap;
+  @media (max-width: 428px) {
+    margin-bottom: 100px;
+  }
   .actorNameMobile {
     font-weight: 600;
     font-size: 22px;

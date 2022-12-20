@@ -32,20 +32,22 @@ const ActorInfo = ({ img, name, body, rank, romashka }) => {
           </p>
         ) : null}
         {rank ? <p className={styles.actorRank}>{rank}</p> : null}
-        <div className={styles.actorCardRomashka}>
-          <div className={styles.cardRomashka}>
-            <p className={styles.romashkaTitle}>
-              {`Лауреат премии "Ромашка":`}
-            </p>
-
-            {romashka?.map((item, index) => (
-              <p className={styles.romashkaContent} key={`romashka-${index}`}>
-                За роль {item?.role_genetive} в спектакле «{item?.play}» сезон{' '}
-                {item?.season?.year}
+        {romashka?.length ? (
+          <div className={styles.actorCardRomashka}>
+            <div className={styles.cardRomashka}>
+              <p className={styles.romashkaTitle}>
+                {`Лауреат премии "Ромашка":`}
               </p>
-            ))}
+
+              {romashka?.map((item, index) => (
+                <p className={styles.romashkaContent} key={`romashka-${index}`}>
+                  За роль {item?.role_genetive} в спектакле «{item?.play}» сезон{' '}
+                  {item?.season?.year}
+                </p>
+              ))}
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
     </section>
   )

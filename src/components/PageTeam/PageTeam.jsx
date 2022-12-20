@@ -81,9 +81,10 @@ const PageTeam = () => {
     if (arr !== null) {
       const roles = arr.map((item) => {
         return {
-          id: item.id,
+          id: item?.id,
           name: item?.fullname,
-          src: API_URL + item.cover?.url,
+          src: API_URL + item?.cover?.url,
+          role: item?.title,
         }
       })
       return roles.flat()
